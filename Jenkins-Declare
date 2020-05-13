@@ -1,0 +1,23 @@
+pipeline{
+    agent any
+    stages{
+        stage("Welcome"){
+            steps{
+                echo "Welcome to Jenkins Declarative Pipeline"
+            }
+            
+        }
+        stage("Testing"){
+            steps{
+                echo "Testing Jenkins Declarative Pipeline"
+            }
+            
+        }
+        stage("GIT Checkout"){
+            steps{
+                git credentialsId: 'fe6313fc-034d-47b6-9df5-0f6b302440c6', url: 'https://github.com/davidvidyasagar/JavaHelloWorld'
+            }
+            
+        }
+    }
+}
